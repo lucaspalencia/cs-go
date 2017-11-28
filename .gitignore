@@ -1,5 +1,6 @@
-# Node modules
+# Dependency directories
 node_modules/
+.npmignore
 
 # dist
 dist
