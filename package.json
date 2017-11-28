@@ -1,6 +1,6 @@
 {
   "name": "cs-go",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "",
   "preferGlobal": true,
   "main": "dist/cli.js",
@@ -9,7 +9,7 @@
     "cs": "dist/cli.js"
   },
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "babel src -d dist && echo '#!/usr/bin/env node' | cat - dist/cli.js > temp && mv temp dist/cli.js",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix"
   },
