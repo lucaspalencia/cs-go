@@ -1,0 +1,37 @@
+{
+  "name": "cs-go",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/cli.js",
+  "bin": {
+    "cs-go": "dist/cli.js",
+    "cs": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "keywords": [
+    "CSGO",
+    "Cli"
+  ],
+  "author": "lucaspalencia",
+  "license": "MIT",
+  "dependencies": {
+    "babel-register": "^6.26.0",
+    "cli-table2": "^0.2.0",
+    "commander": "^2.11.0",
+    "hltv": "^2.3.1",
+    "inquirer": "^4.0.0",
+    "stringz": "^0.2.3",
+    "wide-align": "^1.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "standard": "^10.0.3"
+  }
+}
