@@ -1,25 +1,26 @@
 import HLTV from 'hltv'
 
-import selectedTeam from './list'
+import teamsList from './list'
 
 const catchError = (err, apiName) => {
   console.log(`Oops, ${apiName} goes wrong.`)
-  console.log(
-    'Please run cs-go again.\nIf it still does not work, feel free to open an issue on https://github.com/xxhomey19/nba-go/issues'
-  )
+  console.log('Please run cs-go again.\nIf it still does not work, feel free to open an issue on https://github.com/lucaspalencia/cs-go/issues')
   process.exit(1)
 }
 
 const team = async () => {
+  let teams
+
   try {
-    const teams = await HLTV.getTeamRanking()
-
-    let team = await selectedTeam(teams)
-
-    console.log(team)
+    const _teams = await HLTV.getTeamRanking()
+    teams = _teams
   } catch (err) {
     catchError(err, 'HLTV.getTeamRanking()')
   }
+
+  let teamList = await teamsList(teams)
+
+  console.log(teamList)
 }
 
 export default team

@@ -7,7 +7,7 @@ const TEAMNAME_WIDTH = 20
 const RANK_WIDTH = 11
 const POINTS_WIDTH = 20
 
-const selectedTeam = async (teams) => {
+const teamsList = async (teams) => {
   const header = `│ ${center('Team', TEAMNAME_WIDTH)} │ ${center('Rank', RANK_WIDTH)}│ ${center('Points', POINTS_WIDTH)} │`
 
   const questions = [
@@ -54,4 +54,4 @@ const selectedTeam = async (teams) => {
   return answer
 }
 
-export default selectedTeam
+export default teamsList
