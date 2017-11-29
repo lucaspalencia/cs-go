@@ -1,6 +1,7 @@
 import program from 'commander'
 import csgo from './command'
 
+import chalk from 'chalk'
 import pkg from '../package.json'
 
 program.version(pkg.version)
@@ -25,13 +26,12 @@ program.on('--help', () => {
   console.log('')
   console.log('')
   console.log(
-    `  Welcome to CS GO !`
+    `  Welcome to ${chalk`{bold.hex('#F59E5B') CS:GO}`}!`
   )
   console.log('')
-  console.log(
-    `  Wanna check CS GO team information please enter: 'cs-go teams'`
-  )
+  console.log(`  Wanna check information about teams and players on CS:GO please enter: ${chalk`{bold.hex('#66ff66') cs-go teams}`}`)
   console.log('')
+  console.log(`  For more detailed information, check the GitHub page: ${chalk`{hex('#66ff66') https://github.com/lucaspalencia/cs-go}`}`)
 })
 
 program.option('-v --version', pkg.version)

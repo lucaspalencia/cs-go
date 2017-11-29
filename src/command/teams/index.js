@@ -1,9 +1,11 @@
 import HLTV from 'hltv'
 
 import teamsList from './list'
+import chalk from 'chalk'
 
 const catchError = (err, apiName) => {
-  console.log(`Oops, ${apiName} goes wrong.`)
+  console.log(`${chalk`{red.bold Oops, ${apiName} goes wrong.}`}`)
+  console.log('')
   console.log('Please run cs-go again.\nIf it still does not work, feel free to open an issue on https://github.com/lucaspalencia/cs-go/issues')
   process.exit(1)
 }
@@ -20,7 +22,7 @@ const team = async () => {
 
   let teamList = await teamsList(teams)
 
-  console.log(teamList)
+  console.log(teamList.team)
 }
 
 export default team
