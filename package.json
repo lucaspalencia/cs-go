@@ -1,6 +1,6 @@
 {
   "name": "cs-go",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "preferGlobal": true,
   "main": "dist/cli.js",
@@ -12,6 +12,10 @@
     "build": "babel src -d dist && echo '#!/usr/bin/env node' | cat - dist/cli.js > temp && mv temp dist/cli.js",
     "lint": "eslint src",
     "lint:fix": "npm run lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucaspalencia/cs-go"
   },
   "keywords": [
     "CSGO",
