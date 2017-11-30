@@ -10,7 +10,7 @@ const RANK_WIDTH = 11
 const POINTS_WIDTH = 20
 
 const formatQuestionName = (name, place, points) => {
-  let question = `|⌘${center(chalk.white.bold(name), TEAMNAME_WIDTH)} |${center(chalk.white.bold(place.toString()), RANK_WIDTH)} | ${center(chalk.white.bold(points.toString()), POINTS_WIDTH)} |`
+  let question = `|⌘${center(name, TEAMNAME_WIDTH)} |${center(place.toString(), RANK_WIDTH)} | ${center(points.toString(), POINTS_WIDTH)} |`
 
   switch (place) {
     case 1: {

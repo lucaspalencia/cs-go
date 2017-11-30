@@ -1,7 +1,8 @@
 import HLTV from 'hltv'
 
-import teamsList from './list'
+import ora from 'ora'
 import chalk from 'chalk'
+import teamsList from './list'
 
 const catchError = (err, apiName) => {
   console.log(`${chalk`{red.bold Oops, ${apiName} goes wrong.}`}`)
@@ -11,11 +12,14 @@ const catchError = (err, apiName) => {
 }
 
 const team = async () => {
+  const spinner = ora('Loading teams').start()
+
   let teams
 
   try {
     const _teams = await HLTV.getTeamRanking()
     teams = _teams
+    spinner.stop()
   } catch (err) {
     catchError(err, 'HLTV.getTeamRanking()')
   }
