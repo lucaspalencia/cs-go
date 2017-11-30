@@ -36,6 +36,11 @@ program.on('--help', () => {
 
 program.option('-v --version', pkg.version)
 
+program.command('*').action(command => {
+  console.log(`${chalk.red.bold('Unknown command:')} ${chalk.white.bold(command)}`);
+  process.exit(1);
+});
+
 if (process.argv.length === 2) program.help()
 
 program.parse(process.argv)
