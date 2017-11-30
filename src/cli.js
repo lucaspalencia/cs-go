@@ -9,14 +9,10 @@ program.version(pkg.version)
 program.command('teams')
   .on('--help', () => {
     console.log('')
-    console.log(
-      `  Get teams ordered by HLTV rank`
-    )
+    console.log(`  Get teams ordered by HLTV rank`)
     console.log('')
     console.log('  Example:')
-    console.log(
-      `           'cs-go teams'`
-    )
+    console.log(`           'cs-go teams'`)
   })
   .action(() => {
     csgo.team()
@@ -25,9 +21,7 @@ program.command('teams')
 program.on('--help', () => {
   console.log('')
   console.log('')
-  console.log(
-    `  Welcome to ${chalk`{bold.hex('#F59E5B') CS:GO}`}!`
-  )
+  console.log(`  Welcome to ${chalk`{bold.hex('#F59E5B') CS:GO}`}!`)
   console.log('')
   console.log(`  Wanna check information about teams and players on CS:GO please enter: ${chalk`{bold.hex('#66ff66') cs-go teams}`}`)
   console.log('')
@@ -36,10 +30,11 @@ program.on('--help', () => {
 
 program.option('-v --version', pkg.version)
 
-program.command('*').action(command => {
-  console.log(`${chalk.red.bold('Unknown command:')} ${chalk.white.bold(command)}`);
-  process.exit(1);
-});
+program.command('*')
+  .action(command => {
+    console.log(`${chalk.red.bold('Unknown command:')} ${chalk.white.bold(command)}`)
+    process.exit(1)
+  })
 
 if (process.argv.length === 2) program.help()
 

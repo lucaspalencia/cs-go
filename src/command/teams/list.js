@@ -1,6 +1,9 @@
+import HLTV from 'hltv'
+
 import inquirer from 'inquirer'
 import chalk from 'chalk'
 import cFonts from '../../utils/cfonts'
+import ora from 'ora'
 import { limit } from 'stringz'
 import { center } from 'wide-align'
 
@@ -15,24 +18,30 @@ const formatQuestionName = (name, place, points) => {
   switch (place) {
     case 1: {
       question = `|⌘${center(chalk.yellow.bold(name), TEAMNAME_WIDTH)} |${center(chalk.yellow.bold(place.toString()), RANK_WIDTH)} | ${center(chalk.yellow.bold(points.toString()), POINTS_WIDTH)} |`
-      break;
+      break
     }
 
     case 2: {
       question = `|⌘${center(chalk.cyan.bold(name), TEAMNAME_WIDTH)} |${center(chalk.cyan.bold(place.toString()), RANK_WIDTH)} | ${center(chalk.cyan.bold(points.toString()), POINTS_WIDTH)} |`
-      break;
+      break
     }
 
     case 3: {
       question = `|⌘${center(chalk.magenta.bold(name), TEAMNAME_WIDTH)} |${center(chalk.magenta.bold(place.toString()), RANK_WIDTH)} | ${center(chalk.magenta.bold(points.toString()), POINTS_WIDTH)} |`
-      break;
+      break
     }
   }
 
   return question
 }
 
-const teamsList = async (teams) => {
+const teamsList = async () => {
+  const spinner = ora('Loading teams').start()
+
+  let teams = await HLTV.getTeamRanking()
+
+  spinner.stop()
+
   const header = `│ ${center(chalk`{bold.blue Team}`, TEAMNAME_WIDTH)} │ ${center(chalk`{bold.blue Rank}`, RANK_WIDTH)}│ ${center(chalk`{bold.blue Points}`, POINTS_WIDTH)} │`
 
   const questions = [

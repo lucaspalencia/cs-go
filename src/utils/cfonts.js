@@ -1,4 +1,4 @@
-import CFonts from 'cfonts';
+import CFonts from 'cfonts'
 
 const customFont = text => {
   CFonts.say(text, {
@@ -10,6 +10,6 @@ const customFont = text => {
     lineHeight: 1,
     space: true
   })
-};
+}
 
 export default customFont
