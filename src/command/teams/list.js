@@ -60,9 +60,9 @@ const teamsList = async () => {
 
   const last = teams.length - 1
 
-  cFonts('Rank by HLTV.org')
+  cFonts('by HLTV.org')
 
-  teams.map((teamInfo, index) => {
+  teams.forEach((teamInfo, index) => {
     const {
       team,
       place,
