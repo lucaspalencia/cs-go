@@ -1,5 +1,6 @@
 import chalk from 'chalk'
 import teamsList from './list'
+import teamsInfo from './info'
 
 const catchError = (err, apiName) => {
   if (err) {
@@ -22,7 +23,12 @@ const team = async () => {
     catchError(err, 'teamList()')
   }
 
-  console.log(teamList.team)
+  try {
+    teamsInfo(teamList.team)
+  } catch (err) {
+    console.log(err)
+    catchError(err, 'teamInfo()')
+  }
 }
 
 export default team

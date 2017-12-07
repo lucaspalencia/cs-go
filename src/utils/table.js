@@ -1,7 +1,7 @@
 import Table from 'cli-table2'
 
-const basicTable = () => {
-  let table = new Table({
+const basicTable = (tableStyle) =>
+  new Table({
     head: [],
     chars: {
       top: '═',
@@ -19,10 +19,10 @@ const basicTable = () => {
       right: '║',
       'right-mid': '╢',
       middle: '│'
-    }
+    },
+    style: tableStyle
   })
 
-  return table
+module.exports = {
+  basicTable
 }
-
-export default basicTable
