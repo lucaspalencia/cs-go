@@ -4,6 +4,7 @@ import ora from 'ora'
 import cFonts from '../../utils/cfonts'
 
 import results from './recentResults'
+import maps from './mapStatistics'
 
 const teamsInfo = async (teamId) => {
   const spinner = ora('Loading team information').start()
@@ -12,7 +13,8 @@ const teamsInfo = async (teamId) => {
 
   const {
     name,
-    recentResults
+    recentResults,
+    mapStatistics
   } = team
 
   spinner.stop()
@@ -20,6 +22,7 @@ const teamsInfo = async (teamId) => {
   cFonts(name)
 
   results(name, recentResults)
+  maps(mapStatistics)
 }
 
 export default teamsInfo
