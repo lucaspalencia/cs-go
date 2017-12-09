@@ -1,4 +1,5 @@
 import chalk from 'chalk'
+
 import teamsList from './list'
 import teamsInfo from './info'
 
@@ -26,7 +27,6 @@ const team = async () => {
   try {
     teamsInfo(teamList.team)
   } catch (err) {
-    console.log(err)
     catchError(err, 'teamInfo()')
   }
 }

@@ -7,7 +7,7 @@ const alignCenter = columns =>
 const formatPercentageNumber = (value) => {
   let percentage = `${chalk.red.bold(value)}`
 
-  if (parseInt(value) >= 55) {
+  if (parseFloat(value) >= 50) {
     percentage = `${chalk.green.bold(value)}`
   }
 
@@ -15,7 +15,7 @@ const formatPercentageNumber = (value) => {
 }
 
 const mapStatistics = (maps) => {
-  const mapsTable = table.basicTable({'padding-left': 5, 'padding-right': 5})
+  const mapsTable = table.basicTable({'padding-left': 4, 'padding-right': 4})
   let headerContent = 'Map win statistics'
 
   mapsTable.push(
@@ -44,6 +44,8 @@ const mapStatistics = (maps) => {
   });
 
   console.log(mapsTable.toString())
+  console.log('');
+  console.log('');
 }
 
 export default mapStatistics

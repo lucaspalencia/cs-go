@@ -36,6 +36,7 @@ const formatQuestionName = (name, place, points) => {
 }
 
 const teamsList = async () => {
+  console.log('')
   const spinner = ora('Loading teams').start()
 
   let teams = await HLTV.getTeamRanking()
@@ -60,7 +61,7 @@ const teamsList = async () => {
 
   const last = teams.length - 1
 
-  cFonts('by HLTV.org')
+  cFonts('by HLTV')
 
   teams.forEach((teamInfo, index) => {
     const {
