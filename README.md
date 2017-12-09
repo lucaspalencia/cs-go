@@ -1,10 +1,10 @@
 > The CS:GO CLI.  
 
-See CS:GO teams information (players, map statistics, results) and last matches results
-Best CLI tool for those who are both **CS:GO fans** and **Developers**.
+See CS:GO teams information (players, map statistics, results) and last matches results.  
+Best CLI tool for those who are both **CS:GO fans** and **Developers**.  
 
-All data comes from [hltv.org](https://www.hltv.org/).
-Using [HLTV](https://github.com/gigobyte/HLTV)
+All data comes from [hltv.org](https://www.hltv.org/).  
+Using unofficial HLTV Node.js API [HLTV](https://github.com/gigobyte/HLTV)  
 
 ## Install
 
@@ -23,7 +23,7 @@ $ npm install -g cs-go
 
 ### Teams
 
-List teams ordered by HLTV.org rank.
+List teams ordered by HLTV.org rank.  
 You can choose a team to get the following information:
 
 - Players info
@@ -42,7 +42,7 @@ Show the last matches results from HLTV.org.
 
 ##### `-l <limit>` or `--limit <limit>`
 
-Enter a specific number to limit the quantity of matches results.
+Enter a specific number to limit the quantity of matches results.  
 If you don't specify the option, the limit by default is 20.
 
 ```
