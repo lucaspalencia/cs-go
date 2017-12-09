@@ -1,5 +1,4 @@
 import chalk from 'chalk'
-
 import teamsList from './list'
 import teamsInfo from './info'
 

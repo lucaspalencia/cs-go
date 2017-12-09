@@ -1,8 +1,7 @@
 import program from 'commander'
-import csgo from './command'
-
 import chalk from 'chalk'
 import pkg from '../package.json'
+import csgo from './command'
 
 program.version(pkg.version)
 
@@ -37,6 +36,8 @@ program.command('results')
     console.log('  Example:')
     console.log(`           ${chalk`{hex('#66ff66') cs-go results}       => List the last 20 matches results by HLTV`}`)
     console.log(`           ${chalk`{hex('#66ff66') cs-go results -l 30} => List last 30 matches results by HLTV`}`)
+    console.log('')
+    console.log(`  For more detailed information, check the GitHub page: ${chalk`{hex('#66ff66') https://github.com/lucaspalencia/cs-go}`}`)
   })
   .action((option) => {
     let limit = option.limit
