@@ -1,3 +1,4 @@
-import team from './teams'
+import teams from './teams'
+import results from './results'
 
-export default { team }
+export default { teams, results }

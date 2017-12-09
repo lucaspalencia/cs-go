@@ -1,11 +1,10 @@
 import HLTV from 'hltv'
-
 import inquirer from 'inquirer'
 import chalk from 'chalk'
-import cFonts from '../../utils/cfonts'
 import ora from 'ora'
 import { limit } from 'stringz'
 import { center } from 'wide-align'
+import cFonts from '../../utils/cfonts'
 
 const MAX_WIDTH = 60
 const TEAMNAME_WIDTH = 20
