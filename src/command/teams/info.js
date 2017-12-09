@@ -1,4 +1,5 @@
 import HLTV from 'hltv'
+import chalk from 'chalk'
 import ora from 'ora'
 import cFonts from '../../utils/cfonts'
 import results from './recentResults'

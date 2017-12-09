@@ -1,6 +1,6 @@
 {
   "name": "cs-go",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "preferGlobal": true,
   "main": "dist/cli.js",
@@ -18,8 +18,8 @@
     "url": "git+https://github.com/lucaspalencia/cs-go"
   },
   "keywords": [
-    "CSGO",
-    "Cli"
+    "csgo",
+    "cli"
   ],
   "author": "lucaspalencia",
   "license": "MIT",

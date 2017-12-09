@@ -60,8 +60,8 @@ const recentResults = (name, results) => {
   })
 
   console.log(resultsTable.toString())
-  console.log('');
-  console.log('');
+  console.log('')
+  console.log('')
 }
 
 export default recentResults

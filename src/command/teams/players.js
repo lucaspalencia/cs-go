@@ -53,8 +53,8 @@ const players = (players) => {
   }
 
   console.log(playersTable.toString())
-  console.log('');
-  console.log('');
+  console.log('')
+  console.log('')
 }
 
 export default players

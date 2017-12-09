@@ -41,11 +41,11 @@ const mapStatistics = (maps) => {
         chalk.white.bold(mapInfo.timesPlayed)
       ])
     )
-  });
+  })
 
   console.log(mapsTable.toString())
-  console.log('');
-  console.log('');
+  console.log('')
+  console.log('')
 }
 
 export default mapStatistics

@@ -74,8 +74,8 @@ const resultsList = async (limit) => {
   })
 
   console.log(resultsTable.toString())
-  console.log('');
-  console.log('');
+  console.log('')
+  console.log('')
 }
 
 export default resultsList
