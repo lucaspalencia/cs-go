@@ -38,7 +38,7 @@ const formatResult = (result) => {
 
 const recentResults = (name, results) => {
   const resultsTable = table.basicTable({'padding-left': 5, 'padding-right': 5})
-  let headerContent = `Recent results for ${name}`
+  let headerContent = 'Recent results'
 
   resultsTable.push(
     [{ colSpan: 3, content: `${chalk.white.bold(headerContent)}`, hAlign: 'center', vAlign: 'center' }],
