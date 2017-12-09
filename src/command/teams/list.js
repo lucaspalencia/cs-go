@@ -60,7 +60,7 @@ const teamsList = async () => {
 
   const last = teams.length - 1
 
-  cFonts('by HLTV')
+  cFonts('by HLTV.org')
 
   teams.forEach((teamInfo, index) => {
     const {
