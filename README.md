@@ -51,7 +51,7 @@ $ cs-go results -l 30
 
 ## Development
 
-To run `cs-go` on your local computer, following this step-by-step instruction.
+To run `cs-go` on your local computer, following this step-by-step instruction:
 
 ```
 $ git clone https://github.com/lucaspalencia/cs-go.git
