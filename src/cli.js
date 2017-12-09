@@ -7,6 +7,7 @@ import pkg from '../package.json'
 program.version(pkg.version)
 
 program.command('teams')
+  .alias('t')
   .on('--help', () => {
     console.log('')
     console.log(`  Get teams ordered by HLTV rank`)
@@ -15,7 +16,31 @@ program.command('teams')
     console.log(`           'cs-go teams'`)
   })
   .action(() => {
-    csgo.team()
+    csgo.teams()
+  })
+
+program.command('results')
+  .alias('r')
+  .option('-l, --limit <limit>', 'Show last results')
+  .on('--help', () => {
+    console.log('')
+    console.log(`  Get last results from HLTV`)
+    console.log('')
+    console.log('  Example:')
+    console.log(`           'cs-go results -l 20'`)
+  })
+  .action((option) => {
+    let limit = option.limit
+
+    if (!limit) {
+      limit = 20
+    }
+
+    if (limit > 100) {
+      limit = 100
+    }
+
+    csgo.results(limit)
   })
 
 program.on('--help', () => {

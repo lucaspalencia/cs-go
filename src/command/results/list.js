@@ -1,15 +1,18 @@
+import HLTV from 'hltv'
+import ora from 'ora'
 import chalk from 'chalk'
+import cFonts from '../../utils/cfonts'
 import table from '../../utils/table'
 
 const alignCenter = columns =>
   columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }))
 
-const formatName = (team, enemyTeam, result) => {
+const formatName = (team1, team2, result) => {
   let resultsInt = convertResult(result)
-  let teamsName = `${chalk.green.bold(team)} vs ${chalk.red.bold(enemyTeam.name)}`
+  let teamsName = `${chalk.green.bold(team1.name)} vs ${chalk.red.bold(team2.name)}`
 
   if (resultsInt[0] < resultsInt[1]) {
-    teamsName = `${chalk.red.bold(team)} vs ${chalk.green.bold(enemyTeam.name)}`
+    teamsName = `${chalk.red.bold(team1.name)} vs ${chalk.green.bold(team2.name)}`
   }
 
   return teamsName
@@ -36,24 +39,35 @@ const formatResult = (result) => {
   return finalResult
 }
 
-const recentResults = (name, results) => {
-  const resultsTable = table.basicTable({'padding-left': 5, 'padding-right': 5})
-  let headerContent = 'Recent results'
+const resultsList = async (limit) => {
+  console.log('')
+  const spinner = ora('Loading last results').start()
+
+  const resultsTable = table.basicTable({'padding-left': 2, 'padding-right': 2})
+  let headerContent = `Last ${limit} results`
 
   resultsTable.push(
-    [{ colSpan: 3, content: `${chalk.white.bold(headerContent)}`, hAlign: 'center', vAlign: 'center' }],
+    [{ colSpan: 4, content: `${chalk.white.bold(headerContent)}`, hAlign: 'center', vAlign: 'center' }],
     alignCenter([
       'Teams',
       'Result',
+      'Format',
       'Event'
     ])
   )
 
-  results.forEach((result) => {
+  let results = await HLTV.getResults()
+
+  spinner.stop()
+
+  cFonts('by HLTV.org')
+
+  results.slice(0, limit).forEach((result) => {
     resultsTable.push(
       alignCenter([
-        formatName(name, result.enemyTeam, result.result),
+        formatName(result.team1, result.team2, result.result),
         formatResult(result.result),
+        chalk.white.bold(result.format),
         chalk.hex('#F59E5B').bold(result.event.name)
       ])
     )
@@ -64,4 +78,4 @@ const recentResults = (name, results) => {
   console.log('');
 }
 
-export default recentResults
+export default resultsList

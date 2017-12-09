@@ -1,8 +1,6 @@
 import HLTV from 'hltv'
-
 import ora from 'ora'
 import cFonts from '../../utils/cfonts'
-
 import results from './recentResults'
 import maps from './mapStatistics'
 import playersInfo from './players'
