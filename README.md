@@ -1,6 +1,7 @@
 <p align=center>
 <img src="https://user-images.githubusercontent.com/7226038/33856044-fd5fb8d8-dead-11e7-988f-84e08eb8f60f.jpg">
-</p>
+</p>  
+
 > The CS:GO CLI.  
 
 See CS:GO teams information (players, map statistics, results) and last matches results.  
