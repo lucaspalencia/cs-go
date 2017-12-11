@@ -34,6 +34,10 @@ You can choose a team to get the following information:
 $ cs-go teams
 ```
 
+![cs-go teams](https://user-images.githubusercontent.com/7226038/33812296-4d1c461c-de03-11e7-8a89-de28dbc51d08.png)
+
+![cs-go teams](https://user-images.githubusercontent.com/7226038/33812299-55143ee2-de03-11e7-99fe-0b112a5c111e.png)
+
 ### Results
 
 Show the last matches results from HLTV.org.
@@ -48,6 +52,8 @@ If you don't specify the option, the limit by default is 20.
 ```
 $ cs-go results -l 30
 ```
+
+![cs-go results](https://user-images.githubusercontent.com/7226038/33812300-5ab0f8d6-de03-11e7-86b7-439c6059c003.png)
 
 ## Development
 
