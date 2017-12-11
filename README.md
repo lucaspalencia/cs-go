@@ -1,3 +1,6 @@
+<p align=center>
+<img src="https://user-images.githubusercontent.com/7226038/33856044-fd5fb8d8-dead-11e7-988f-84e08eb8f60f.jpg">
+</p>
 > The CS:GO CLI.  
 
 See CS:GO teams information (players, map statistics, results) and last matches results.  
@@ -10,9 +13,7 @@ Using unofficial HLTV Node.js API [HLTV](https://github.com/gigobyte/HLTV)
 
 To use cs-go, make sure that you have [Node](https://nodejs.org/) version 6.0.0 or higher.
 
-```
-$ npm install -g cs-go
-```
+[![NPM CS-GO](https://nodei.co/npm/cs-go.png)](https://nodei.co/npm/cs-go/)
 
 ## Usage
 
