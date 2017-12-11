@@ -34,9 +34,9 @@ You can choose a team to get the following information:
 $ cs-go teams
 ```
 
-![cs-go teams](https://user-images.githubusercontent.com/7226038/33812296-4d1c461c-de03-11e7-8a89-de28dbc51d08.png)
+![cs-go teams](https://user-images.githubusercontent.com/7226038/33832684-3183e76e-de64-11e7-9c60-c11bfe1faba4.png)
 
-![cs-go teams](https://user-images.githubusercontent.com/7226038/33812299-55143ee2-de03-11e7-99fe-0b112a5c111e.png)
+![cs-go teams](https://user-images.githubusercontent.com/7226038/33832683-3165e7aa-de64-11e7-8fd8-2ef298368861.png)
 
 ### Results
 
@@ -50,10 +50,10 @@ Enter a specific number to limit the quantity of matches results.
 If you don't specify the option, the limit by default is 20.
 
 ```
-$ cs-go results -l 30
+$ cs-go results -l 10
 ```
 
-![cs-go results](https://user-images.githubusercontent.com/7226038/33812300-5ab0f8d6-de03-11e7-86b7-439c6059c003.png)
+![cs-go results](https://user-images.githubusercontent.com/7226038/33832682-3146b10a-de64-11e7-933f-5bc3d341435c.png)
 
 ## Development
 
