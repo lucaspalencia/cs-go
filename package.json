@@ -1,6 +1,6 @@
 {
   "name": "cs-go",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "preferGlobal": true,
   "main": "dist/cli.js",
