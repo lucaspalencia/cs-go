@@ -25,6 +25,12 @@ program.command('teams')
     csgo.teams()
   })
 
+program.command('matches')
+  .alias('m')
+  .action(() => {
+    csgo.matches()
+  })
+
 program.command('results')
   .alias('r')
   .option('-l, --limit <limit>', 'Show last results')
