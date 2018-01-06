@@ -6,24 +6,27 @@ import { limit } from 'stringz'
 import { center } from 'wide-align'
 import cFonts from '../../utils/cfonts'
 
-const MAX_WIDTH = 114
+const MAX_WIDTH = 119
 const TEAMNAME_WIDTH = 45
-const EVENT_WIDTH = 45
+const EVENT_WIDTH = 50
 const STATUS_WIDTH = 15
 
 const formatStatus = (date, status) => {
-  let questionStatus = 'LIVE'
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+  let questionStatus = chalk.green.bold('LIVE')
 
   if (status) {
     return questionStatus
   }
 
   let dateClass = new Date(date)
-  let dateDay = `${dateClass.getDate()}/${dateClass.getMonth()}`
+  let dateDay = (dateClass.getDate() < 10 ? '0' : '') + dateClass.getDate()
+  let dateFormat = `${months[dateClass.getMonth()]} ${dateDay}`
   let dateHours = dateClass.getHours()
   let dateMinutes = (dateClass.getMinutes() < 10 ? '0' : '') + dateClass.getMinutes()
 
-  questionStatus = `${dateDay} ${dateHours}:${dateMinutes}`
+  questionStatus = `${chalk.yellow.bold(`${dateFormat} ${dateHours}:${dateMinutes}`)}`
 
   return questionStatus
 }
@@ -32,13 +35,13 @@ const formatQuestionName = (team1, team2, event, date, status) => {
   let teamsName = `${team1.name} vs ${team2.name}`
   let questionStatus = formatStatus(date, status)
 
-  let question = `|⌘${center(teamsName, TEAMNAME_WIDTH)} |${center(chalk.bold(event.name), EVENT_WIDTH)} | ${center(chalk.yellow.bold(questionStatus), STATUS_WIDTH)} |`
+  let question = `|⌘${center(teamsName, TEAMNAME_WIDTH)} |${center(chalk.bold(event.name), EVENT_WIDTH)} | ${center(questionStatus, STATUS_WIDTH)} |`
   return question
 }
 
 const matchesList = async () => {
   console.log('')
-  const spinner = ora('Loading matches').start()
+  const spinner = ora('Loading upcoming matches').start()
 
   let matches = await HLTV.getMatches()
 
