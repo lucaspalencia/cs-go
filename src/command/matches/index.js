@@ -1,4 +1,5 @@
 import matchesList from './list'
+import matchInfo from './info'
 
 const matches = async () => {
   let matcheList
@@ -6,7 +7,12 @@ const matches = async () => {
   try {
     const _matcheList = await matchesList()
     matcheList = _matcheList
-    console.log(matcheList)
+  } catch (err) {
+    console.log(err)
+  }
+
+  try {
+    matchInfo(matcheList.matche)
   } catch (err) {
     console.log(err)
   }
