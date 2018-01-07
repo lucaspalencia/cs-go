@@ -27,6 +27,8 @@ const streams = (streams) => {
   })
 
   console.log(streamsTable.toString())
+  console.log('')
+  console.log('')
 }
 
 export default streams
