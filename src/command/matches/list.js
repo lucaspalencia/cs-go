@@ -32,7 +32,6 @@ const formatQuestionName = (team1, team2, event, date, status) => {
 
 const matchesList = async () => {
   console.log('')
-
   const spinner = ora('Loading recent matches').start()
 
   let matches = await HLTV.getMatches()

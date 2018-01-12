@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 import { basicTable, alignCenter } from '../../utils/table'
 
-const maps = (maps) => {
+const mapsResults = (maps) => {
   const mapsTable = basicTable({'padding-left': 7, 'padding-right': 7})
 
   mapsTable.push(
@@ -26,4 +26,4 @@ const maps = (maps) => {
   console.log('')
 }
 
-export default maps
+export default mapsResults

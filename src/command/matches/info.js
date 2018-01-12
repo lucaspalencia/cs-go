@@ -2,7 +2,7 @@ import HLTV from 'hltv'
 import ora from 'ora'
 import errorLog from '../../utils/error'
 import general from './general'
-import maps from './maps'
+import mapsResults from './mapsResults'
 import vetoes from './vetoes'
 import streams from './streams'
 import headtohead from './headtohead'
@@ -17,37 +17,34 @@ const filterMaps = (maps) => {
 
 const matchInfo = async (matcheId) => {
   console.log('')
-
   const spinner = ora('Loading match information').start()
-  let matchInfo
 
   try {
-    const _matchInfo = await HLTV.getMatch({id: matcheId})
-    matchInfo = _matchInfo
+    const matchInfo = await HLTV.getMatch({id: matcheId})
+
+    spinner.stop()
+
+    general(matchInfo)
+
+    if (matchInfo.vetoes.length) {
+      vetoes(matchInfo.vetoes, matchInfo.team1.name)
+    }
+
+    let maps = filterMaps(matchInfo.maps)
+
+    if (maps.length) {
+      mapsResults(matchInfo.maps)
+    }
+
+    if (matchInfo.streams.length) {
+      streams(matchInfo.streams)
+    }
+
+    if (matchInfo.headToHead.length) {
+      headtohead(matchInfo.headToHead)
+    }
   } catch (err) {
     errorLog(err, 'HLTV.getMatch()')
-  }
-
-  spinner.stop()
-
-  general(matchInfo)
-
-  if (matchInfo.streams.length) {
-    streams(matchInfo.streams)
-  }
-
-  if (matchInfo.vetoes.length) {
-    vetoes(matchInfo.vetoes, matchInfo.team1.name)
-  }
-
-  let maps = filterMaps(matchInfo.maps)
-
-  if (maps.length) {
-    maps(matchInfo.maps)
-  }
-
-  if (matchInfo.headToHead.length) {
-    headtohead(matchInfo.headToHead)
   }
 }
 

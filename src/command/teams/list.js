@@ -2,9 +2,9 @@ import HLTV from 'hltv'
 import inquirer from 'inquirer'
 import chalk from 'chalk'
 import ora from 'ora'
+import cFonts from '../../utils/cfonts'
 import { limit } from 'stringz'
 import { center } from 'wide-align'
-import cFonts from '../../utils/cfonts'
 
 const MAX_WIDTH = 60
 const TEAMNAME_WIDTH = 20
@@ -36,7 +36,6 @@ const formatQuestionName = (name, place, points) => {
 
 const teamsList = async () => {
   console.log('')
-
   const spinner = ora('Loading teams').start()
 
   let teams = await HLTV.getTeamRanking()
