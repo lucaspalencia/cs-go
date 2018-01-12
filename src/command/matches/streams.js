@@ -1,11 +1,8 @@
 import chalk from 'chalk'
-import table from '../../utils/table'
-
-const alignCenter = columns =>
-  columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }))
+import { basicTable, alignCenter } from '../../utils/table'
 
 const streams = (streams) => {
-  const streamsTable = table.basicTable({'padding-left': 2, 'padding-right': 2})
+  const streamsTable = basicTable({'padding-left': 1, 'padding-right': 1})
 
   streamsTable.push(
     [{ colSpan: 3, content: `${chalk.white.bold('Streams')}`, hAlign: 'center', vAlign: 'center' }],

@@ -1,8 +1,5 @@
 import chalk from 'chalk'
-import table from '../../utils/table'
-
-const alignCenter = columns =>
-  columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }))
+import { basicTable, alignCenter } from '../../utils/table'
 
 const formatColorStats = (statistic, comparator, reverse = false) => {
   let percentage = `${chalk.red.bold(statistic)}`
@@ -22,7 +19,7 @@ const formatColorStats = (statistic, comparator, reverse = false) => {
 }
 
 const players = (players) => {
-  const playersTable = table.basicTable({'padding-left': 1, 'padding-right': 1})
+  const playersTable = basicTable({'padding-left': 1, 'padding-right': 1})
   let headerContent = 'Players info'
 
   playersTable.push(

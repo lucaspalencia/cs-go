@@ -23,6 +23,7 @@ const basicTable = (tableStyle) =>
     style: tableStyle
   })
 
-module.exports = {
-  basicTable
-}
+const alignCenter = columns =>
+  columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }))
+
+export { basicTable, alignCenter }

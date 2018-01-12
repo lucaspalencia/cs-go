@@ -36,6 +36,7 @@ const formatQuestionName = (name, place, points) => {
 
 const teamsList = async () => {
   console.log('')
+
   const spinner = ora('Loading teams').start()
 
   let teams = await HLTV.getTeamRanking()

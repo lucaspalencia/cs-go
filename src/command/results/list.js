@@ -2,10 +2,17 @@ import HLTV from 'hltv'
 import ora from 'ora'
 import chalk from 'chalk'
 import cFonts from '../../utils/cfonts'
-import table from '../../utils/table'
+import { basicTable, alignCenter } from '../../utils/table'
 
-const alignCenter = columns =>
-  columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }))
+const convertResult = (result) => {
+  let resultArray = result.replace(/\s/g, '').split('-')
+
+  let resultsInt = resultArray.map((result) => {
+    return parseInt(result)
+  })
+
+  return resultsInt
+}
 
 const formatName = (team1, team2, result) => {
   let resultsInt = convertResult(result)
@@ -16,16 +23,6 @@ const formatName = (team1, team2, result) => {
   }
 
   return teamsName
-}
-
-const convertResult = (result) => {
-  let resultArray = result.replace(/\s/g, '').split('-')
-
-  let resultsInt = resultArray.map((result) => {
-    return parseInt(result)
-  })
-
-  return resultsInt
 }
 
 const formatResult = (result) => {
@@ -41,9 +38,10 @@ const formatResult = (result) => {
 
 const resultsList = async (limit) => {
   console.log('')
-  const spinner = ora('Loading last results').start()
 
-  const resultsTable = table.basicTable({'padding-left': 2, 'padding-right': 2})
+  const spinner = ora('Loading last results').start()
+  const resultsTable = basicTable({'padding-left': 2, 'padding-right': 2})
+
   let headerContent = `Last ${limit} results`
 
   resultsTable.push(

@@ -1,14 +1,11 @@
 import chalk from 'chalk'
-import table from '../../utils/table'
-
-const alignCenter = columns =>
-  columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }))
+import { basicTable, alignCenter } from '../../utils/table'
 
 const maps = (maps) => {
-  const mapsTable = table.basicTable({'padding-left': 6, 'padding-right': 6})
+  const mapsTable = basicTable({'padding-left': 7, 'padding-right': 7})
 
   mapsTable.push(
-    [{ colSpan: 2, content: `${chalk.white.bold('Maps Result')}`, hAlign: 'center', vAlign: 'center' }],
+    [{ colSpan: 2, content: `${chalk.white.bold('Maps Results')}`, hAlign: 'center', vAlign: 'center' }],
     alignCenter([
       'Name',
       'Result'

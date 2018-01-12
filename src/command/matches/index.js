@@ -1,3 +1,4 @@
+import errorLog from '../../utils/error'
 import matchesList from './list'
 import matchInfo from './info'
 
@@ -8,13 +9,13 @@ const matches = async () => {
     const _matcheList = await matchesList()
     matcheList = _matcheList
   } catch (err) {
-    console.log(err)
+    errorLog(err, 'HLTV.getMatches()')
   }
 
   try {
     matchInfo(matcheList.matche)
   } catch (err) {
-    console.log(err)
+    errorLog(err, 'matchInfo()')
   }
 }
 
