@@ -1,8 +1,5 @@
 import chalk from 'chalk'
-import table from '../../utils/table'
-
-const alignCenter = columns =>
-  columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }))
+import { basicTable, alignCenter } from '../../utils/table'
 
 const formatName = (team, enemyTeam, result) => {
   let resultsInt = convertResult(result)
@@ -37,7 +34,7 @@ const formatResult = (result) => {
 }
 
 const recentResults = (name, results) => {
-  const resultsTable = table.basicTable({'padding-left': 5, 'padding-right': 5})
+  const resultsTable = basicTable({'padding-left': 5, 'padding-right': 5})
   let headerContent = 'Recent results'
 
   resultsTable.push(

@@ -1,8 +1,5 @@
 import chalk from 'chalk'
-import table from '../../utils/table'
-
-const alignCenter = columns =>
-  columns.map(content => ({ content, hAlign: 'center', vAlign: 'center' }))
+import { basicTable, alignCenter } from '../../utils/table'
 
 const vetoeTeamName = (team, team1) => {
   let teamName = chalk.cyan.bold(team)
@@ -25,7 +22,7 @@ const vetoeType = (type) => {
 }
 
 const vetoes = (vetoes, team1) => {
-  const vetoesTable = table.basicTable({'padding-left': 6, 'padding-right': 6})
+  const vetoesTable = basicTable({'padding-left': 6, 'padding-right': 6})
 
   vetoesTable.push(
     [{ colSpan: 3, content: `${chalk.white.bold('Vetoes')}`, hAlign: 'center', vAlign: 'center' }],

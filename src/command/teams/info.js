@@ -1,24 +1,16 @@
 import HLTV from 'hltv'
 import chalk from 'chalk'
 import ora from 'ora'
+import errorLog from '../../utils/error'
 import cFonts from '../../utils/cfonts'
 import results from './recentResults'
 import maps from './mapStatistics'
 import playersInfo from './players'
 
-const catchError = (err, apiName) => {
-  if (err) {
-    console.log('')
-    console.log('')
-    console.log(`${chalk`{red.bold Oops, ${apiName} goes wrong.}`}`)
-    console.log('')
-    console.log('Please run cs-go again.\nIf it still does not work, feel free to open an issue on https://github.com/lucaspalencia/cs-go/issues')
-    process.exit(1)
-  }
-}
 
 const teamsInfo = async (teamId) => {
   console.log('')
+
   const spinner = ora('Loading team information').start()
 
   let teamRank
@@ -38,7 +30,7 @@ const teamsInfo = async (teamId) => {
     teamMaps = _teamInfo.mapStatistics
     teamResults = _teamInfo.recentResults
   } catch (err) {
-    catchError(err, 'HLTV.getTeam()')
+    errorLog(err, 'HLTV.getTeam()')
   }
 
   for (let player of teamPlayers) {
@@ -50,7 +42,7 @@ const teamsInfo = async (teamId) => {
         'statistics': _playerInfo.statistics
       })
     } catch (err) {
-      catchError(err, 'HLTV.getPlayer()')
+      errorLog(err, 'HLTV.getPlayer()')
     }
   }
 
