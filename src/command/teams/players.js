@@ -35,7 +35,7 @@ const players = (players) => {
     ])
   )
 
-  for (let player of players) {
+  players.forEach((player) => {
     playersTable.push(
       alignCenter([
         chalk.hex('#F59E5B').bold(player.name),
@@ -47,7 +47,7 @@ const players = (players) => {
         formatColorStats(player.statistics.roundsContributed, 70)
       ])
     )
-  }
+  })
 
   console.log(playersTable.toString())
   console.log('')

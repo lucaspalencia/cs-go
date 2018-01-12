@@ -1,4 +1,5 @@
 import chalk from 'chalk'
+import dateFormat from '../../utils/date'
 import { basicTable, alignCenter } from '../../utils/table'
 
 const headtohead = (maps) => {
@@ -18,9 +19,9 @@ const headtohead = (maps) => {
   maps.forEach((map) => {
     headtoheadTable.push(
       alignCenter([
-        chalk.white.bold(map.date),
-        chalk.white.bold(map.winner.name),
-        chalk.white.bold(map.event.name),
+        chalk.white.bold(dateFormat(map.date)),
+        chalk.magenta.bold(map.winner.name),
+        chalk.blue.bold(map.event.name),
         chalk.hex('#F59E5B').bold(map.map),
         chalk.white.bold(map.result)
       ])

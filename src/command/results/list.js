@@ -38,7 +38,6 @@ const formatResult = (result) => {
 
 const resultsList = async (limit) => {
   console.log('')
-
   const spinner = ora('Loading last results').start()
   const resultsTable = basicTable({'padding-left': 2, 'padding-right': 2})
 

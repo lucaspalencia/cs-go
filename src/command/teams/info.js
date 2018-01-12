@@ -7,52 +7,40 @@ import results from './recentResults'
 import maps from './mapStatistics'
 import playersInfo from './players'
 
+const getPlayersInfo = async (players) => {
+  let teamPlayers = []
+
+  for (let player of players) {
+    const _playerInfo = await HLTV.getPlayer({id: player.id})
+
+    teamPlayers.push({
+      'name': _playerInfo.ign,
+      'statistics': _playerInfo.statistics
+    })
+  }
+
+  return teamPlayers
+}
 
 const teamsInfo = async (teamId) => {
   console.log('')
-
   const spinner = ora('Loading team information').start()
 
-  let teamRank
-  let teamName
-  let teamPlayers
-  let teamResults
-  let teamMaps
-
-  let players = []
-
   try {
-    const _teamInfo = await HLTV.getTeam({id: teamId})
+    const teamInfo = await HLTV.getTeam({id: teamId})
 
-    teamRank = _teamInfo.rank
-    teamName = _teamInfo.name
-    teamPlayers = _teamInfo.players
-    teamMaps = _teamInfo.mapStatistics
-    teamResults = _teamInfo.recentResults
+    let players = await getPlayersInfo(teamInfo.players);
+
+    spinner.stop()
+
+    cFonts(`${teamInfo.name}  #${teamInfo.rank}`)
+
+    playersInfo(players)
+    maps(teamInfo.mapStatistics)
+    results(teamInfo.name, teamInfo.recentResults)
   } catch (err) {
     errorLog(err, 'HLTV.getTeam()')
   }
-
-  for (let player of teamPlayers) {
-    try {
-      const _playerInfo = await HLTV.getPlayer({id: player.id})
-
-      players.push({
-        'name': _playerInfo.ign,
-        'statistics': _playerInfo.statistics
-      })
-    } catch (err) {
-      errorLog(err, 'HLTV.getPlayer()')
-    }
-  }
-
-  spinner.stop()
-
-  cFonts(`${teamName}  #${teamRank}`)
-
-  playersInfo(players)
-  maps(teamMaps)
-  results(teamName, teamResults)
 }
 
 export default teamsInfo
