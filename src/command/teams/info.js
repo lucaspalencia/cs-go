@@ -1,5 +1,4 @@
 import HLTV from 'hltv'
-import chalk from 'chalk'
 import ora from 'ora'
 import errorLog from '../../utils/error'
 import cFonts from '../../utils/cfonts'
@@ -29,7 +28,7 @@ const teamsInfo = async (teamId) => {
   try {
     const teamInfo = await HLTV.getTeam({id: teamId})
 
-    let players = await getPlayersInfo(teamInfo.players);
+    let players = await getPlayersInfo(teamInfo.players)
 
     spinner.stop()
 

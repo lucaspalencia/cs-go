@@ -3,10 +3,10 @@ const dateFormat = (date) => {
   let dateTime
 
   let dateClass = new Date(date)
-    , dateDay = (dateClass.getDate() < 10 ? '0' : '') + dateClass.getDate()
-    , dateFormat = `${months[dateClass.getMonth()]} ${dateDay}`
-    , dateHours = (dateClass.getHours() < 10 ? '0' : '') + dateClass.getHours()
-    , dateMinutes = (dateClass.getMinutes() < 10 ? '0' : '') + dateClass.getMinutes()
+  let dateDay = (dateClass.getDate() < 10 ? '0' : '') + dateClass.getDate()
+  let dateFormat = `${months[dateClass.getMonth()]} ${dateDay}`
+  let dateHours = (dateClass.getHours() < 10 ? '0' : '') + dateClass.getHours()
+  let dateMinutes = (dateClass.getMinutes() < 10 ? '0' : '') + dateClass.getMinutes()
 
   dateTime = `${dateFormat} ${dateHours}:${dateMinutes}`
 

@@ -32,7 +32,7 @@ const formatQuestionName = (team1, team2, event, date, status) => {
 
 const matchesList = async () => {
   console.log('')
-  const spinner = ora('Loading recent matches').start()
+  const spinner = ora('Loading live/next matches').start()
 
   let matches = await HLTV.getMatches()
 
@@ -65,10 +65,10 @@ const matchesList = async () => {
       team2,
       event,
       date,
-      live,
+      live
     } = match
 
-    if ( (date || live) && team1 && team2 ) {
+    if ((date || live) && team1 && team2) {
       questions[0].choices.push({
         name: formatQuestionName(team1, team2, event, date, live),
         value: id

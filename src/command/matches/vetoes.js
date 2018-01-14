@@ -4,7 +4,7 @@ import { basicTable, alignCenter } from '../../utils/table'
 const vetoeTeamName = (team, team1) => {
   let teamName = chalk.cyan.bold(team)
 
-  if (team == team1) {
+  if (team === team1) {
     teamName = chalk.blue.bold(team)
   }
 
@@ -14,7 +14,7 @@ const vetoeTeamName = (team, team1) => {
 const vetoeType = (type) => {
   let typeFormat = chalk.red.bold(type)
 
-  if (type == 'picked') {
+  if (type === 'picked') {
     typeFormat = chalk.green.bold(type)
   }
 

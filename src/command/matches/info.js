@@ -9,7 +9,7 @@ import headtohead from './headtohead'
 
 const filterMaps = (maps) => {
   let matchMaps = maps.filter((map) => {
-    return (map.name != 'tba' && map.result != '')
+    return (map.name !== 'tba' && map.result !== '')
   })
 
   return matchMaps

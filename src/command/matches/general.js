@@ -40,8 +40,8 @@ const general = (matchInfo) => {
     return player.name
   })
 
-  let team1 =  `${chalk.blue.bold(matchInfo.team1.name)}:`
-    , team2 =  `${chalk.cyan.bold(matchInfo.team2.name)}:`
+  let team1 = `${chalk.blue.bold(matchInfo.team1.name)}:`
+  let team2 = `${chalk.cyan.bold(matchInfo.team2.name)}:`
 
   team1Players.unshift(team1)
   team2Players.unshift(team2)
@@ -51,7 +51,7 @@ const general = (matchInfo) => {
     alignCenter(team2Players)
   )
 
-  console.log(generalTable.toString());
+  console.log(generalTable.toString())
   console.log('')
   console.log('')
 }
