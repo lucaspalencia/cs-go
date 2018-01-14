@@ -21,7 +21,8 @@ To use cs-go, make sure that you have [Node](https://nodejs.org/) version 6.0.0 
 `cs-go` provides two commands.
 
 1. teams
-2. results
+2. matches
+3. results
 
 ### Teams
 
@@ -39,6 +40,21 @@ $ cs-go teams
 ![cs-go teams](https://user-images.githubusercontent.com/7226038/33832684-3183e76e-de64-11e7-9c60-c11bfe1faba4.png)
 
 ![cs-go teams](https://user-images.githubusercontent.com/7226038/33832683-3165e7aa-de64-11e7-8fd8-2ef298368861.png)
+
+### Matches
+
+List live/next matches by HLTV.org.  
+You can choose a matche to get the following information:
+
+- Event / Format / Team players
+- Vetoes
+- Maps results
+- Streams
+- Head to head results
+
+```
+$ cs-go matches
+```
 
 ### Results
 
