@@ -75,6 +75,21 @@ program.command('results')
     csgo.results(limit)
   })
 
+program.command('streams')
+  .alias('s')
+  .on('--help', () => {
+    console.log('')
+    console.log(`  Show live streams from HLTV.org`)
+    console.log('')
+    console.log('  Example:')
+    console.log(`           ${chalk`{hex('#66ff66') cs-go streams}       => List live streams by HLTV`}`)
+    console.log('')
+    console.log(`  For more detailed information, check the GitHub page: ${chalk`{hex('#66ff66') https://github.com/lucaspalencia/cs-go}`}`)
+  })
+  .action((option) => {
+    csgo.streams()
+  })
+
 program.on('--help', () => {
   console.log('')
   console.log('')
@@ -83,6 +98,7 @@ program.on('--help', () => {
   console.log(`  Wanna check information about CS:GO teams please enter: ${chalk`{hex('#66ff66') cs-go teams}`}`)
   console.log(`  Wanna check CS:GO live/next matches please enter: ${chalk`{hex('#66ff66') cs-go matches}`}`)
   console.log(`  Wanna check CS:GO last matches results please enter: ${chalk`{hex('#66ff66') cs-go results}`}`)
+  console.log(`  Wanna check CS:GO live streams please enter: ${chalk`{hex('#66ff66') cs-go streams}`}`)
   console.log('')
   console.log(`  For more detailed information, check the GitHub page: ${chalk`{hex('#66ff66') https://github.com/lucaspalencia/cs-go}`}`)
   console.log(`  Or enter ${chalk`{hex('#66ff66') cs-go teams -h, cs-go matches -h, cs-go results -h}`} to get more information`)
