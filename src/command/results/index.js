@@ -1,4 +1,3 @@
-import chalk from 'chalk'
 import errorLog from '../../utils/error'
 import resultsList from './list'
 
