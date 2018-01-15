@@ -4,7 +4,7 @@
 
 > The CS:GO CLI.  
 
-See CS:GO teams information (players, map statistics, results) and last matches results.  
+See CS:GO teams information (players, map statistics, results), live/next matches, last matches results and live streams.  
 Best CLI tool for those who are both **CS:GO fans** and **Developers**.  
 
 All data comes from [hltv.org](https://www.hltv.org/).  
@@ -18,11 +18,12 @@ To use cs-go, make sure that you have [Node](https://nodejs.org/) version 6.0.0 
 
 ## Usage
 
-`cs-go` provides two commands.
+`cs-go` provides four commands.
 
 1. teams
 2. matches
 3. results
+4. streams
 
 ### Teams
 
@@ -72,6 +73,16 @@ $ cs-go results -l 10
 ```
 
 ![cs-go results](https://user-images.githubusercontent.com/7226038/33832682-3146b10a-de64-11e7-933f-5bc3d341435c.png)
+
+### Streams
+
+Show live streams from HLTV.org.
+
+```
+$ cs-go streams
+```
+
+![cs-go streams](https://user-images.githubusercontent.com/7226038/34922556-baba88e2-f978-11e7-8787-13fff02170a5.png)
 
 ## Development
 

@@ -101,7 +101,7 @@ program.on('--help', () => {
   console.log(`  Wanna check CS:GO live streams please enter: ${chalk`{hex('#66ff66') cs-go streams}`}`)
   console.log('')
   console.log(`  For more detailed information, check the GitHub page: ${chalk`{hex('#66ff66') https://github.com/lucaspalencia/cs-go}`}`)
-  console.log(`  Or enter ${chalk`{hex('#66ff66') cs-go teams -h, cs-go matches -h, cs-go results -h}`} to get more information`)
+  console.log(`  Or enter ${chalk`{hex('#66ff66') cs-go teams -h, cs-go matches -h, cs-go results -h, cs-go streams -h}`} to get more information`)
 })
 
 program.option('-v --version', pkg.version)
