@@ -7,9 +7,9 @@ import { center } from 'wide-align'
 import cFonts from '../../utils/cfonts'
 import dateFormat from '../../utils/date'
 
-const MAX_WIDTH = 122
+const MAX_WIDTH = 129
 const TEAMNAME_WIDTH = 45
-const EVENT_WIDTH = 53
+const EVENT_WIDTH = 60
 const STATUS_WIDTH = 15
 
 const formatStatus = (date, live) => {
@@ -42,8 +42,8 @@ const matchesList = async () => {
 
   const questions = [
     {
-      name: 'matche',
-      message: 'Which match do you want to see?',
+      name: 'match',
+      message: 'Which game do you want to see?',
       type: 'list',
       pageSize: 45,
       choices: [

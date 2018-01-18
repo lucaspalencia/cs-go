@@ -15,12 +15,12 @@ const filterMaps = (maps) => {
   return matchMaps
 }
 
-const matchInfo = async (matcheId) => {
+const matchInfo = async (matchId) => {
   console.log('')
   const spinner = ora('Loading match information').start()
 
   try {
-    const matchInfo = await HLTV.getMatch({id: matcheId})
+    const matchInfo = await HLTV.getMatch({id: matchId})
 
     spinner.stop()
 

@@ -3,17 +3,17 @@ import matchesList from './list'
 import matchInfo from './info'
 
 const matches = async () => {
-  let matcheList
+  let matchList
 
   try {
-    const _matcheList = await matchesList()
-    matcheList = _matcheList
+    const _matchList = await matchesList()
+    matchList = _matchList
   } catch (err) {
     errorLog(err, 'HLTV.getMatches()')
   }
 
   try {
-    matchInfo(matcheList.matche)
+    matchInfo(matchList.match)
   } catch (err) {
     errorLog(err, 'matchInfo()')
   }

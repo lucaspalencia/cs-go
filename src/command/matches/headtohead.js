@@ -6,7 +6,7 @@ const headtohead = (maps) => {
   const headtoheadTable = basicTable({'padding-left': 2, 'padding-right': 2})
 
   headtoheadTable.push(
-    [{ colSpan: 5, content: `${chalk.white.bold('Head To Head')}`, hAlign: 'center', vAlign: 'center' }],
+    [{ colSpan: 5, content: `${chalk.white.bold('Last head to head matches')}`, hAlign: 'center', vAlign: 'center' }],
     alignCenter([
       'Date',
       'Winner',
@@ -16,7 +16,7 @@ const headtohead = (maps) => {
     ])
   )
 
-  maps.forEach((map) => {
+  maps.slice(0,10).forEach((map) => {
     headtoheadTable.push(
       alignCenter([
         chalk.white.bold(dateFormat(map.date)),
