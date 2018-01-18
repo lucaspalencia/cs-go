@@ -7,10 +7,10 @@ import { center } from 'wide-align'
 import cFonts from '../../utils/cfonts'
 import dateFormat from '../../utils/date'
 
-const MAX_WIDTH = 129
+const MAX_WIDTH = 132
 const TEAMNAME_WIDTH = 45
 const EVENT_WIDTH = 60
-const STATUS_WIDTH = 15
+const STATUS_WIDTH = 19
 
 const formatStatus = (date, live) => {
   let questionStatus = chalk.green.bold('LIVE')

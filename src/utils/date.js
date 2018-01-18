@@ -3,12 +3,13 @@ const dateFormat = (date) => {
   let dateTime
 
   let dateClass = new Date(date)
+  let dateYear = dateClass.getFullYear();
   let dateDay = (dateClass.getDate() < 10 ? '0' : '') + dateClass.getDate()
   let dateFormat = `${months[dateClass.getMonth()]} ${dateDay}`
   let dateHours = (dateClass.getHours() < 10 ? '0' : '') + dateClass.getHours()
   let dateMinutes = (dateClass.getMinutes() < 10 ? '0' : '') + dateClass.getMinutes()
 
-  dateTime = `${dateFormat} ${dateHours}:${dateMinutes}`
+  dateTime = `${dateYear} ${dateFormat} ${dateHours}:${dateMinutes}`
 
   return dateTime
 }

@@ -57,7 +57,7 @@ const resultsList = async (limit) => {
 
   spinner.stop()
 
-  cFonts('by HLTV.org')
+  cFonts('Results')
 
   results.slice(0, limit).forEach((result) => {
     resultsTable.push(

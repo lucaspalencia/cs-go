@@ -51,7 +51,7 @@ You can choose a matche to get the following information:
 - Vetoes
 - Maps results
 - Streams
-- Head to head results
+- Last head to head matches
 
 ```
 $ cs-go matches
