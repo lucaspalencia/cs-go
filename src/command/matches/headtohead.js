@@ -16,7 +16,7 @@ const headtohead = (maps) => {
     ])
   )
 
-  maps.slice(0,10).forEach((map) => {
+  maps.slice(0, 10).forEach((map) => {
     headtoheadTable.push(
       alignCenter([
         chalk.white.bold(dateFormat(map.date)),
