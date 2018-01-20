@@ -106,7 +106,7 @@ $ NODE_ENV=development node bin/cli.js <command>
 ## Inspired on:
  - [nba-go](https://github.com/xxhomey19/nba-go)
  - [HLTV](https://github.com/gigobyte/HLTV)
- - [cptmetro] (https://github.com/vitormargis/cptmetro)
+ - [cptmetro](https://github.com/vitormargis/cptmetro)
 
 ## License
 
