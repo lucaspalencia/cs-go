@@ -63,6 +63,8 @@ You can choose a matche to get the following information:
 $ cs-go matches
 ```
 
+![cs-go matches](https://user-images.githubusercontent.com/7226038/35187919-bd33ef9c-fe13-11e7-9060-3a90255d15ea.gif)
+
 ### Results
 
 Show the last matches results from HLTV.org.
