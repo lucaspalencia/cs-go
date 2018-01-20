@@ -2,6 +2,12 @@
 <img src="https://user-images.githubusercontent.com/7226038/33856044-fd5fb8d8-dead-11e7-988f-84e08eb8f60f.jpg">
 </p>  
 
+<p align=center>
+<a target="_blank" href="http://nodejs.org/download/" title="Node version"><img src="https://img.shields.io/badge/node.js-%3E=_6.0-green.svg"></a>
+<a target="_blank" href="https://opensource.org/licenses/MIT" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
+<a target="_blank" href="http://makeapullrequest.com" title="PRs Welcome"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"></a>
+</p>  
+
 > The CS:GO CLI.  
 
 See CS:GO teams information (players, map statistics, results), live/next matches, last matches results and live streams.  
@@ -72,7 +78,7 @@ If you don't specify the option, the limit by default is 20.
 $ cs-go results -l 10
 ```
 
-![cs-go results](https://user-images.githubusercontent.com/7226038/33832682-3146b10a-de64-11e7-933f-5bc3d341435c.png)
+![cs-go results](https://user-images.githubusercontent.com/7226038/35183319-349531a2-fdcb-11e7-9029-9336ed722d54.png)
 
 ### Streams
 
