@@ -1,6 +1,6 @@
 {
   "name": "cs-go",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "",
   "preferGlobal": true,
   "main": "dist/cli.js",
@@ -29,7 +29,7 @@
     "chalk": "^2.3.2",
     "cli-table2": "^0.2.0",
     "commander": "^2.15.0",
-    "hltv": "^2.7.0",
+    "hltv": "^2.7.2",
     "inquirer": "^4.0.2",
     "ora": "^1.4.0",
     "stringz": "^0.2.3",
